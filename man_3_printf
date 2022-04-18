@@ -172,3 +172,7 @@ SOME CASE BORDERS OR WARNING
 
 
 	-printf(NULL);  --> return (-1);
+
+
+AUTHORS
+Written by Blessing Ojo and Tobiloba Odukoya.
