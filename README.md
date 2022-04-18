@@ -6,7 +6,7 @@ A printf function built by Tobiloba Odukoya and Blessing Ojo
 
 Rebuild of the standard printf function in C, A function capable of printing with the %d, %c, %s, and %% specifiers to standard output, printf returns the number of characters printed (excluding the null byte use to terminate strings)
 
-#Supported Format Types
+# Supported Format Types
 
 TYPE - OUTPUT
 
