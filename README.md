@@ -1,6 +1,6 @@
-#printf
+# printf
 
-A simple printf function built by Tobiloba Odukoya and Blessing Ojo
+A printf function built by Tobiloba Odukoya and Blessing Ojo
 
 # Welcome
 
@@ -64,10 +64,6 @@ p - pointer
 
 
 
-F - expletive
-
-
-
 # Examples
 
 
@@ -81,10 +77,6 @@ String: printf("%s", This is a string.); Output: This is a string.
 
 
 Integer: printf("%i", 5); Output: 5
-
-
-
-Expletive: printf("%F", anything); Output: FUCK
 
 
 

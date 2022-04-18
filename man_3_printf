@@ -1,0 +1,174 @@
+INTF() - Manual for our _printf function.
+
+
+NAME | SYNOPSIS/FUNCTIONING | DESCRIPTION | RETURN VALUE | EXAMPLES | CASE BORDERS | FOR USE
+
+
+_PRINTF()  ----------------------- MANUAL ------------------>
+
+
+NAME
+
+	printf => output converter
+
+
+SYNOPSIS
+
+	Structure of the function call
+
+-----	int _printf(const char *format, ...)
+
+	format - pointer that receive arguments of any type.
+	
+	 (...) - receive a indefinite number of parameters.
+
+
+USE 	
+
+	for use this function add the #include "main.h" to his file.  
+
+	
+
+DESCRIPTION
+
+	
+
+	The function _printf() produce output according to a format or options 
+
+	these allow the function to be flexible 
+
+	The type of data we want to write (also called format specifiers), are described and explained below.
+
+	- write output to stdout( the standar output stream)
+	
+
+	|Converters or options
+
+	receive a character string, write after the percentage(%)
+
+	symbol to know what you want to call that function.
+	
+
+	"=>"  []" refers to the output.
+
+		
+
+	'c' - receive a int, that convert to unsigned char and write character to the standard output.
+
+		example: _printf("%c", 'c');    => [ c ]
+
+
+
+	's' - receive a pointer char (char *) to an array of characters 
+
+		and characters of the string are written.
+
+
+
+		example: _printf("hello %s", "valentin") => [hello valentin]
+
+
+
+	'd & i' - take the number int and write in the standard output.
+
+		example: _printf("%d", 200); => [ 200 ]
+
+
+
+	'u' - takes an unsigned integer number and writes it to standard output.
+
+
+
+	'R'  - ROT13 conversion - takes a pointer to a string and encrypts the 
+
+		contents to ROT13 and writes it to standard output.
+
+		example: _printf("%R", "hello world");  => [ uryyb jbeyq ]
+
+
+
+	'o' - translate or convert an unsigned decimal to an unsigned octal (base 8 number).
+
+		example: _printf("%o", 1230);  => [ 2316 ]
+
+	
+
+	'x' - hexadecimal ,convert an unsigned decimal to an unsignde hexadecimal (base 16 number) 
+
+		using lowercase alphabet ("abcdef").
+
+		example: _printf("%x", 1230);  => [ 4CE ]		
+
+
+
+	'X' - hexadecimal, the same that 'x' but using uppercase alphabet "ABCDEF".
+
+		example: _printf("%x", 1230);  => [ 4ce ]
+
+	
+
+	'b' - convert a unsigned int to a binary and write in the standard output.
+
+		example: _printf("%b", 28);   => [ 11100 ]
+
+	
+
+	'r' - takes a pointer to char (char *) and writes its contents backwards (end to start) to standard output.
+
+		example: _printf("%d", "hello world");   =>  [ olleh dlrow ]
+
+
+
+EXAMPLES OF USES
+
+
+
+	-input
+
+		int a = 120;
+
+		_printf("I have %d dollars", a);
+
+	-output
+
+		[I have 120 dollars]
+
+    	
+
+	-input
+
+		_printf("%s", "hello");
+
+	-output
+
+		[hello];
+
+
+
+RETURN VALUE 
+
+	Successfully, the function returns the number of characters of the output excluding the null byte
+
+	
+
+	In the event of an error, the function returns a negative value (-1).
+
+	
+
+	On other cases that the function receives something not supported, the function does not return anything.
+
+
+
+
+
+SOME CASE BORDERS OR WARNING
+
+	_printf("%%");  --> a 2 percentege equals one
+
+	
+
+	_printf("%s", NULL); --> 2 percentage - write (null) in the standard output 
+
+
+
+	-printf(NULL);  --> return (-1);
