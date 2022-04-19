@@ -53,15 +53,15 @@ int print_rot(va_list args)
 }
 /**
 * print_rev - print string in reverse
-* @ch: char
+* @args: char
 * Return: length
 */
 int print_rev(va_list args)
 {
-char *cadena;
-int i = 0, cont = 0;
+	char *cadena;
+	int i = 0, cont = 0;
 
-cadena = va_arg(ch, char*);
+	cadena = va_arg(args, char*);
 	if (cadena != NULL)
 	{
 		if (cadena[0] == '\0')
