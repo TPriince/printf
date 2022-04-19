@@ -48,7 +48,7 @@ int get_print_func(char c, char b, va_list args, int len)
 			len = print_rot(args);
 			break;
 		case 'r':
-			len - print_rev(args);
+			len = print_rev(args);
 			break;
 		default:
 			len += _putchar(b);
