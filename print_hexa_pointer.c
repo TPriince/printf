@@ -1,3 +1,6 @@
+#include "main.h"
+#include <stdio.h>
+
 /**
  * print_heX - Prints a representation of a decimal number on base16 Uppercase
  * @list: List of the arguments passed to the function
