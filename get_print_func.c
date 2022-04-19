@@ -29,6 +29,18 @@ int get_print_func(char c, char b, va_list args, int len)
 		case 'b':
 			len = print_binary(args);
 			break;
+		case 'o':
+			len = print_octal(args);
+			break;
+		case 'x':
+			len = print_hex(args);
+			break;
+		case 'X':
+			len = print_heX(args);
+			break;
+		case 'u':
+			len = print_unsigned(args);
+			break;
 		default:
 			len += _putchar(b);
 			len += _putchar(c);

@@ -79,3 +79,41 @@ int print_num(va_list args, int len)
 	len = putchar_int(n, len);
 	return (len);
 }
+
+/*PRINT UNSIGNED INT*/
+/**
+ * print_unsigned - print unsigned integers
+ * @args: list of arguments
+ *
+ * Return: no of chaaracters
+ */
+int print_unsigned(va_list args)
+{
+	int count = 0;
+
+	int n = va_arg(args, int);
+
+	unsigned int dc, dig, nat = n;
+
+	double f = 1;
+
+	if (n == 0)
+		_putchar('0');
+	else
+	{
+		while (f <= nat)
+			f *= 10;
+
+		dc = f / 10;
+
+		while (dc >= 1)
+		{
+			dig = nat / dc;
+													_putchar(dig + '0');
+													nat = (nat - (dc * dig));
+													dc /= 10;
+													count++;
+												}
+	}
+	return (count);
+}
