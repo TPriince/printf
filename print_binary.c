@@ -1,40 +1,43 @@
 #include "main.h"
-#include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
-/**
- * get_bin - function that prints binary
- * @num: number converted to binary
- */
-void get_bin(unsigned int num)
-{
-	if (num / 2)
-	{
-		get_bin(num / 2);
-
-		_putchar(num % 2 + '0');
-	}
-	else
-		_putchar(num % 2 + '0');
-}
 
 /**
- * print_binary - function that handles binary
- * @args: args
- * Return: length
+ * print_binary - converts a number from base 10 to binary
+ * @list: List of arguments passed to this function
+ * Return: The length of the number printed
  */
-int print_binary(va_list args)
+int print_binary(va_list list)
 {
 	unsigned int num;
+	int i, len;
+	char *str;
+	char *rev_str;
 
-	int i;
+	num = va_arg(list, unsigned int);
+	if (num == 0)
+		return (_putchar('0'));
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 2);
+	str = malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (-1);
 
-	num = va_arg(args, unsigned int);
-
-	get_bin(num);
-
-	for (i = 0; num / 2; i++)
+	for (i = 0; num > 0; i++)
+	{
+		if (num % 2 == 0)
+			str[i] = '0';
+		else
+			str[i] = '1';
 		num = num / 2;
-
-	return (i + 1);
+	}
+	str[i] = '\0';
+	rev_str = rev_string(str);
+	if (rev_str == NULL)
+		return (-1);
+	write_base(rev_str);
+	free(str);
+	free(rev_str);
+	return (len);
 }
+
