@@ -48,3 +48,72 @@ int print_heX(va_list args)
  * @num: Number to convert into letter
  * @x: Tells which hex function is calling it
  * Return: Ascii value for a letter
+ */
+int hex_check(int num, char x)
+{
+	char *hex = "abcdef";
+	char *Hex = "ABCDEF";
+
+	num = num - 10;
+	if (x == 'x')
+		return (hex[num]);
+	else
+		return (Hex[num]);
+	return (0);
+}
+/**
+ * print_hexa_pointer - function that prints the hexa number
+ * @num: alias of the list of parameters
+ * Return: iter + 1, total amount of chars
+ */
+void print_hexa_pointer(unsigned long num)
+{
+	int dif;
+
+	if (num / 16)
+	{
+		rec_hexa(num / 16);
+		if (num % 16 > 9 && num % 16 <= 16)
+		{
+			dif = (num % 16) - 9;
+			_putchar((dif + 1) + '_');
+		}
+		else
+			_putchar(num % 16 + '0');
+	}
+	else
+	{
+		if (num % 16 > 9 && num % 16 < 16)
+		{
+			dif = (num % 16) - 9;
+			_putchar((dif + 1) + '_');
+		}
+		else
+			_putchar(num % 16 + '0');
+
+	}
+}
+/**
+ * print_pointer - prints pointer
+ * @args: va_list
+ * Return: int.
+ */
+int print_pointer(va_list args)
+{
+	unsigned long i = va_arg(args, unsigned long);
+	int num = 0, cont = 0;
+
+	if (i == 0)
+	{
+		return (_printf("(nil)"));
+	}
+
+	cont += _putchar('0');
+	cont += _putchar('x');
+	print_hexa_pointer(i);
+	for (num = 0; i / 16; num++)
+	{
+		i = i / 16;
+	}
+	return ((num + cont) + 1);
+}
