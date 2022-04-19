@@ -43,6 +43,4 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 int print_unsgined_number(unsigned int);
 
 
-int _puts(char *str);
-
 #endif
