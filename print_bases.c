@@ -137,7 +137,7 @@ int print_heX(va_list args)
 	char *hex_rep;
 	char *rev_hex;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(args, unsigned int);
 
 	if (num == 0)
 		return (_putchar('0'));
