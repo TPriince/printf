@@ -82,12 +82,12 @@ int print_num(va_list args, int len)
 
 /*PRINT UNSIGNED INT*/
 /**
- * print_unsigned - print unsigned integers
+ * print_ui - print unsigned integers
  * @args: list of arguments
  *
  * Return: no of chaaracters
  */
-int print_unsigned(va_list args)
+int print_ui(va_list args)
 {
 	int count = 0;
 

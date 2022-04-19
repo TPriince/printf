@@ -39,7 +39,7 @@ int get_print_func(char c, char b, va_list args, int len)
 			len = print_heX(args);
 			break;
 		case 'u':
-			len = print_unsigned(args);
+			len = print_ui(args);
 			break;
 		default:
 			len += _putchar(b);
