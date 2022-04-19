@@ -18,3 +18,64 @@ int print_string(va_list args, int len)
 
 	return (len);
 }
+/**
+ * print_rot - traduce letras a rot13
+ * @args: string
+ * Return: i which is the counter of characters
+ */
+int print_rot(va_list args)
+{
+	int i = 0;
+	char *str;
+
+	str = va_arg(args, char *);
+
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+			{
+				_putchar(str[i] + 13);
+			}
+			else
+			{
+				_putchar(str[i] - 13);
+			}
+		}
+		else
+		{
+			_putchar(str[i]);
+		}
+		i++;
+	}
+	return (i);
+}
+/**
+* print_rev - print string in reverse
+* @ch: char
+* Return: length
+*/
+int print_rev(va_list args)
+{
+char *cadena;
+int i = 0, cont = 0;
+
+cadena = va_arg(ch, char*);
+	if (cadena != NULL)
+	{
+		if (cadena[0] == '\0')
+			return (0);
+
+		while (cadena[i] != '\0')
+			i++;
+
+		cont = i;
+
+		for (i--; i >= 0; i--)
+			_putchar (cadena[i]);
+	}
+	else
+		return (0);
+return (cont);
+}
