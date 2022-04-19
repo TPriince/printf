@@ -99,16 +99,20 @@ Integer: printf("%i", 5); Output: 5
 #### There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.
 
 
-
+## More Info
 ### Authorized functions and macros
 
-write (man 2 write) malloc (man 3 malloc) free (man 3 free) va_start (man 3 va_start) va_end (man 3 va_end) va_copy (man 3 va_copy) va_arg (man 3 va_arg)
+* write (man 2 write) 
+* malloc (man 3 malloc) 
+* free (man 3 free) 
+* va_start (man 3 va_start) 
+* va_end (man 3 va_end) 
+* va_copy (man 3 va_copy) 
+* va_arg (man 3 va_arg)
 
 
 
 ### Authors
 
-Tobiloba Odukoya
-
-Blessing Ojo
-
+* **Tobiloba Odukoya**
+* **Blessing Ojo**
