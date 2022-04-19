@@ -18,10 +18,10 @@ int print_numbers(unsigned long n, unsigned int base, const char *digits);
 int putchar_int(int n, int len);
 int print_ui(va_list args);
 
-int print_binary(va_list list);
-int print_octal(va_list list);
-int print_hex(va_list list);
-int print_heX(va_list list);
+int print_binary(va_list args);
+int print_octal(va_list args);
+int print_hex(va_list args);
+int print_heX(va_list args);
 int hex_check(int num, char x);
 
 char *rev_string(char *s);
