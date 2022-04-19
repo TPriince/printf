@@ -23,6 +23,7 @@ int print_octal(va_list args);
 int print_hexa(va_list args);
 int print_heX(va_list args);
 int hex_check(int num, char x);
+void rec_hexa(unsigned int num);
 int print_pointer(va_list args);
 
 char *rev_string(char *s);
