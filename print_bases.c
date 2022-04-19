@@ -40,92 +40,89 @@ int print_binary(va_list list)
 	free(rev_str);
 	return (len);
 }
+/**
+ * rec_oct - function
+ * @num: number
+ */
+void rec_oct(unsigned int num)
+{
+	if (num / 8)
+	{
+		rec_oct(num / 8);
+		_putchar(num % 8 + '0');
+	}
+	else
+		_putchar(num % 8 + '0');
+}
 
 /**
- * print_octal - Prints the numeric representation of a number in octal base
- * @list: List of all the arguments passed to the program
- * Return: Number of symbols printed to stdout
+ * print_octal - converts a number from base 10 to base 8
+ * @list: List of arguments passed to this function
+ * Return: The length of the number printed
  */
 int print_octal(va_list list)
 {
 	unsigned int num;
-	int len;
-	char *octal_rep;
-	char *rev_str;
+	long int iter;
 
 	num = va_arg(list, unsigned int);
-
-	if (num == 0)
-		return (_putchar('0'));
-	if (num < 1)
-		return (-1);
-	len = base_len(num, 8);
-
-	octal_rep = malloc(sizeof(char) * len + 1);
-	if (octal_rep == NULL)
-		return (-1);
-	for (len = 0; num > 0; len++)
-	{
-		octal_rep[len] = (num % 8) + 48;
+	rec_oct(num);
+	for (iter = 0; num / 8; iter++)
 		num = num / 8;
-
-	}
-	octal_rep[len] = '\0';
-	rev_str = rev_string(octal_rep);
-	if (rev_str == NULL)
-		return (-1);
-
-	write_base(rev_str);
-	free(octal_rep);
-	free(rev_str);
-	return (len);
+	return (iter + 1);
 }
 
 /**
- * print_hex - Prints a representation of a decimal number on base16 lowercase
- * @list: List of the arguments passed to the function
- * Return: Number of characters printed
+ * rec_hexa - function that gives you the hexa number
+ * @num: user given number
  */
-int print_hex(va_list list)
+void rec_hexa(unsigned int num)
 {
-	unsigned int num;
-	int len;
-	int rem_num;
-	char *hex_rep;
-	char *rev_hex;
+	int dif;
 
-	num = va_arg(list, unsigned int);
-
-	if (num == 0)
-		return (_putchar('0'));
-	if (num < 1)
-		return (-1);
-	len = base_len(num, 16);
-	hex_rep = malloc(sizeof(char) * len + 1);
-	if (hex_rep == NULL)
-		return (-1);
-	for (len = 0; num > 0; len++)
+	if (num / 16)
 	{
-		rem_num = num % 16;
-		if (rem_num > 9)
+		rec_hexa(num / 16);
+		if (num % 16 > 9 && num % 16 <= 16)
 		{
-			rem_num = hex_check(rem_num, 'x');
-			hex_rep[len] = rem_num;
+			dif = (num % 16) - 9;
+			_putchar((dif + 1) + '_');
 		}
 		else
-			hex_rep[len] = rem_num + 48;
-		num = num / 16;
+			_putchar(num % 16 + '0');
 	}
-	hex_rep[len] = '\0';
-	rev_hex = rev_string(hex_rep);
-	if (rev_hex == NULL)
-		return (-1);
-	write_base(rev_hex);
-	free(hex_rep);
-	free(rev_hex);
-	return (len);
-}
+	else
+	{
+		if (num % 16 > 9 && num % 16 < 16)
+		{
+			dif = (num % 16) - 9;
+			_putchar((dif + 1) + '_');
+		}
+		else
+			_putchar(num % 16 + '0');
 
+	}
+}
+/**
+ * print_hexa - converts a number from base 10 to hexadecimal
+ * @list: List of arguments passed to this function
+ * Return: The length of the number printed
+ */
+int print_hexa(va_list list)
+{
+	long int num;
+	unsigned int iter;
+
+	iter = va_arg(list, unsigned int);
+
+	rec_hexa(iter);
+
+	for (num = 0; iter / 16; num++)
+	{
+		iter = iter / 16;
+	}
+	return (num + 1);
+}
 
 /**
  * print_heX - Prints a representation of a decimal number on base16 Uppercase
