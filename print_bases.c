@@ -3,17 +3,17 @@
 
 /**
  * print_binary - converts a number from base 10 to binary
- * @list: List of arguments passed to this function
+ * @args: List of arguments passed to this function
  * Return: The length of the number printed
  */
-int print_binary(va_list list)
+int print_binary(va_list args)
 {
 	unsigned int num;
 	int i, len;
 	char *str;
 	char *rev_str;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(args, unsigned int);
 	if (num == 0)
 		return (_putchar('0'));
 	if (num < 1)
@@ -57,15 +57,15 @@ void rec_oct(unsigned int num)
 
 /**
  * print_octal - converts a number from base 10 to base 8
- * @list: List of arguments passed to this function
+ * @args: List of arguments passed to this function
  * Return: The length of the number printed
  */
-int print_octal(va_list list)
+int print_octal(va_list args)
 {
 	unsigned int num;
 	long int iter;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(args, unsigned int);
 	rec_oct(num);
 	for (iter = 0; num / 8; iter++)
 		num = num / 8;
@@ -105,15 +105,15 @@ void rec_hexa(unsigned int num)
 }
 /**
  * print_hexa - converts a number from base 10 to hexadecimal
- * @list: List of arguments passed to this function
+ * @args: List of arguments passed to this function
  * Return: The length of the number printed
  */
-int print_hexa(va_list list)
+int print_hexa(va_list args)
 {
 	long int num;
 	unsigned int iter;
 
-	iter = va_arg(list, unsigned int);
+	iter = va_arg(args, unsigned int);
 
 	rec_hexa(iter);
 
@@ -129,7 +129,7 @@ int print_hexa(va_list list)
  * @list: List of the arguments passed to the function
  * Return: Number of characters printed
  */
-int print_heX(va_list list)
+int print_heX(va_list args)
 {
 	unsigned int num;
 	int len;
