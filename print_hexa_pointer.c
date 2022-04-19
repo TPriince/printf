@@ -3,7 +3,7 @@
 
 /**
  * print_heX - Prints a representation of a decimal number on base16 Uppercase
- * @list: List of the arguments passed to the function
+ * @args: List of the arguments passed to the function
  * Return: Number of characters printed
  */
 int print_heX(va_list args)
