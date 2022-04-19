@@ -33,7 +33,7 @@ int get_print_func(char c, char b, va_list args, int len)
 			len = print_octal(args);
 			break;
 		case 'x':
-			len = print_hex(args);
+			len = print_hexa(args);
 			break;
 		case 'X':
 			len = print_heX(args);
