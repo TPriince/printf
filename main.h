@@ -17,6 +17,8 @@ unsigned int find_length(unsigned int n, int base);
 int print_numbers(unsigned long n, unsigned int base, const char *digits);
 int putchar_int(int n, int len);
 int print_ui(va_list args);
+int print_rot(va_list args);
+int print_rev(va_list args);
 
 int print_binary(va_list args);
 int print_octal(va_list args);
