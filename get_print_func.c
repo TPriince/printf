@@ -41,6 +41,9 @@ int get_print_func(char c, char b, va_list args, int len)
 		case 'u':
 			len = print_ui(args);
 			break;
+		case 'p':
+			len = print_pointer(args);
+			break;
 		default:
 			len += _putchar(b);
 			len += _putchar(c);
