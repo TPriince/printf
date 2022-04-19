@@ -23,6 +23,7 @@ int print_octal(va_list args);
 int print_hexa(va_list args);
 int print_heX(va_list args);
 int hex_check(int num, char x);
+int print_pointer(va_list args);
 
 char *rev_string(char *s);
 void write_base(char *str);
