@@ -42,5 +42,7 @@ void write_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int print_unsgined_number(unsigned int);
 
+int get_flag(char s, flags_t *f);
+int (*get_print(char s))((va_list, flags_t *);
 
 #endif
